@@ -45,6 +45,9 @@
                   1976. aastal asutatud CGI on üks maailma suuremaid IT- ja ärinõustamisteenuste osutajaid.
                   Tugineme pikaaegsele kogemusele, et aidata kiirendada koostööpartnerite investeeringute tasuvust.</p>
               </div>
+              <div class="footer-text">
+                <p>© 2024 CGI Inc</p>
+              </div>
 
             </div>
           </div>
@@ -91,13 +94,6 @@ export default {
 }
 </script>
 <style>
-/*HEADER CSS*/
-
-/*BODY CSS*/
-
-/*FOOTER*/
-
-
 ul {
   margin: 0px;
   padding: 0px;
@@ -106,11 +102,11 @@ ul {
 .footer-section {
   background: black;
   position: relative;
-  margin-top: 200px;
+  /*margin-top: 200px;*/
 }
 
 .footer-cta {
-  border-bottom: 1px solid #373636;
+  border-bottom: 1px solid #3c78a0;
 }
 
 .single-cta i {
