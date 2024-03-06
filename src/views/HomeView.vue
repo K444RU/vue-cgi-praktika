@@ -6,105 +6,146 @@
     <!--BODY-->
     <div class="home-page-body">
       <div class="home-page-left-nav">
-        GG
       </div>
+
+      <!--NEW UPPER BUTTONS DAY PICKERS-->
       <div class="home-page-centre-nav">
-        <div class="home-page-centre-upper-tabs">
+        <div class="home-page-centre-upper-tabs2">
           <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="pills-monday-tab"
-                      data-bs-toggle="pill" data-bs-target="#pills-monday"
-                      type="button" role="tab" aria-controls="pills-monday"
-                      aria-selected="true">Esmaspäev
-              </button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-tuesday-tab"
-                      data-bs-toggle="pill" data-bs-target="#pills-tuesday"
-                      type="button" role="tab" aria-controls="pills-tuesday"
-                      aria-selected="false">Teisipäev
-              </button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-wednesday-tab"
-                      data-bs-toggle="pill" data-bs-target="#pills-wednesday"
-                      type="button" role="tab" aria-controls="pills-wednesday"
-                      aria-selected="false">Kolmapäev
-              </button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-thursday-tab"
-                      data-bs-toggle="pill" data-bs-target="#pills-thursday"
-                      type="button" role="tab" aria-controls="pills-thursday"
-                      aria-selected="false">Neljapäev
-              </button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-friday-tab"
-                      data-bs-toggle="pill" data-bs-target="#pills-friday"
-                      type="button" role="tab" aria-controls="pills-friday"
-                      aria-selected="false">Reede
-              </button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-saturday-tab"
-                      data-bs-toggle="pill" data-bs-target="#pills-saturday"
-                      type="button" role="tab" aria-controls="pills-saturday"
-                      aria-selected="false">Laupäev
-              </button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-sunday-tab"
-                      data-bs-toggle="pill" data-bs-target="#pills-sunday"
-                      type="button" role="tab" aria-controls="pills-sunday"
-                      aria-selected="false">Pühapäev
-              </button>
-            </li>
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <font-awesome-icon :icon="['fas', 'film']" /> Zanrid
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </div>
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <font-awesome-icon :icon="['fas', 'hand']" /> Vanusepiirang
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </div>
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <font-awesome-icon :icon="['fas', 'clock']" /> Algus alates
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </div>
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <font-awesome-icon :icon="['fas', 'volume-high']" /> Keel
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
+            <div class="day-picker_choice">
+              <li class="nav-item" role="presentation">
+                <button class="day-choice-button active" id="pills-monday-tab"
+                        data-bs-toggle="pill" data-bs-target="#pills-monday"
+                        type="button" role="tab" aria-controls="pills-monday"
+                        aria-selected="true"
+                >
+                  <span>Esmaspaev</span>
+                </button>
+              </li>
             </div>
 
+            <div class="day-picker_choice">
+              <li class="nav-item" role="presentation">
+                <button class="day-choice-button" id="pills-tuesday-tab"
+                        data-bs-toggle="pill" data-bs-target="#pills-tuesday"
+                        type="button" role="tab" aria-controls="pills-tuesday"
+                        aria-selected="false">Teisipaev.
+                </button>
+              </li>
+            </div>
+
+            <div class="day-picker_choice">
+              <li class="nav-item" role="presentation">
+                <button class="day-choice-button" id="pills-wednesday-tab"
+                        data-bs-toggle="pill" data-bs-target="#pills-wednesday"
+                        type="button" role="tab" aria-controls="pills-wednesday"
+                        aria-selected="false">Kolmapaev.
+                </button>
+              </li>
+            </div>
+
+            <div class="day-picker_choice">
+              <li class="nav-item" role="presentation">
+                <button class="day-choice-button" id="pills-thursday-tab"
+                        data-bs-toggle="pill" data-bs-target="#pills-thursday"
+                        type="button" role="tab" aria-controls="pills-thursday"
+                        aria-selected="false">Neljapaev.
+                </button>
+              </li>
+            </div>
+
+            <div class="day-picker_choice">
+              <li class="nav-item" role="presentation">
+                <button class="day-choice-button" id="pills-friday-tab"
+                        data-bs-toggle="pill" data-bs-target="#pills-friday"
+                        type="button" role="tab" aria-controls="pills-friday"
+                        aria-selected="false">Reede.
+                </button>
+              </li>
+            </div>
+
+            <div class="day-picker_choice">
+              <li class="nav-item" role="presentation">
+                <button class="day-choice-button" id="pills-saturday-tab"
+                        data-bs-toggle="pill" data-bs-target="#pills-saturday"
+                        type="button" role="tab" aria-controls="pills-saturday"
+                        aria-selected="false">Laupaev.
+                </button>
+              </li>
+            </div>
+
+            <div class="day-picker_choice">
+              <li class="nav-item" role="presentation">
+                <button class="day-choice-button" id="pills-sunday-tab"
+                        data-bs-toggle="pill" data-bs-target="#pills-sunday"
+                        type="button" role="tab" aria-controls="pills-sunday"
+                        aria-selected="false">Puhapaev.
+                </button>
+              </li>
+            </div>
+
+            <div class="filter-picker-choice">
+              <div class=" dropdown">
+                <button class="dropdown-button dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <font-awesome-icon :icon="['fas', 'film']"/>  Zanr
+                </button>
+                <ul class="dropdown-menu">
+                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
+                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
+                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
+                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
+                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
+                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="filter-picker-choice">
+              <div class="dropdown">
+                <button class="dropdown-button dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                  <font-awesome-icon :icon="['fas', 'hand']"/>
+                  Vanus
+                </button>
+                <ul class="dropdown-menu">
+                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
+                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="filter-picker-choice">
+              <div class="dropdown">
+                <button class="dropdown-button dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                  <font-awesome-icon :icon="['fas', 'clock']"/>
+                  Algus
+                </button>
+                <ul class="dropdown-menu">
+                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
+                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="filter-picker-choice">
+              <div class="dropdown">
+                <button class="dropdown-button dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                  <font-awesome-icon :icon="['fas', 'volume-high']"/>
+                  Keel
+                </button>
+                <ul class="dropdown-menu">
+                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
+                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
+                </ul>
+              </div>
+            </div>
           </ul>
-
-
         </div>
+        <!--NEW UPPER BUTTONS DAY PICKERS-->
+
+
         <div class="home-page-centre-lower-tabs">
           <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-monday"
@@ -119,7 +160,12 @@
                     <div class="grid-wrapper">
                       <div class="row">Row 1 Filmi Algus</div>
                       <div class="row">Row 2 CGI Stream</div>
-                      <div class="row"><button style="width: 80%"><font-awesome-icon :icon="['fas', 'video']" /> Vaata Treilerit</button></div>
+                      <div class="row">
+                        <button class="trailer-button">
+                          <font-awesome-icon :icon="['fas', 'video']"/>
+                          Vaata Treilerit
+                        </button>
+                      </div>
                     </div>
                   </div>
 
@@ -136,20 +182,60 @@
                       <div class="info-grid-wrapper">
                         <div class="row">Movie name</div>
                         <div class="row"></div>
-                        <div class="row"><button style="width: 50%"><font-awesome-icon :icon="['fas', 'ticket']" /> OSTA PILET</button></div>
+                        <div class="row">
+                          <button class="ticket-button" >
+                            <font-awesome-icon :icon="['fas', 'ticket']"/>
+                            OSTA PILET
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            <div class="movie-info-row">
+              <div class="movie-info-row">
                 <div class="movie-row-left-box">
-
+                  <img class="movie-image" src="@/assets/dune.jpg" alt="Logo">
                 </div>
                 <div class="movie-row-right-box">
+                  <div class="movie-time-container">
+                    <div class="grid-wrapper">
+                      <div class="row">DÜÜN</div>
+                      <div class="row">Row 2 CGI Stream</div>
+                      <div class="row">
+                        <button class="trailer-button">
+                          <font-awesome-icon :icon="['fas', 'video']"/>
+                          Vaata Treilerit
+                        </button>
+                      </div>
+                    </div>
+                  </div>
 
+                  <div class="movie-info-container">
+                    <div class="info-column">
+                      <div class="info-grid-wrapper">
+                        <div class="row">Filmi Nimi</div>
+                        <div class="row"></div>
+                        <div class="row">Keel • Vanusepiirang • Zanr</div>
+                      </div>
+                    </div>
+
+                    <div class="info-column">
+                      <div class="info-grid-wrapper">
+                        <div class="row">Movie name</div>
+                        <div class="row"></div>
+                        <div class="row">
+                          <button class="ticket-button">
+                            <font-awesome-icon :icon="['fas', 'ticket']"/>
+                            OSTA PILET
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
+
             </div>
             <div class="tab-pane fade" id="pills-tuesday"
                  role="tabpanel" aria-labelledby="pills-tuesday-tab" tabindex="0">TEISIPAEV
@@ -162,7 +248,12 @@
                     <div class="grid-wrapper">
                       <div class="row">Row 1 Filmi Algus</div>
                       <div class="row">Row 2 CGI Stream</div>
-                      <div class="row"><button style="width: 80%"><font-awesome-icon :icon="['fas', 'video']" /> Vaata Treilerit</button></div>
+                      <div class="row">
+                        <button style="width: 80%">
+                          <font-awesome-icon :icon="['fas', 'video']"/>
+                          Vaata Treilerit
+                        </button>
+                      </div>
                     </div>
                   </div>
 
@@ -179,7 +270,12 @@
                       <div class="info-grid-wrapper">
                         <div class="row">Movie name</div>
                         <div class="row"></div>
-                        <div class="row"><button style="width: 50%"><font-awesome-icon :icon="['fas', 'ticket']" /> OSTA PILET</button></div>
+                        <div class="row">
+                          <button class="ticket-button">
+                            <font-awesome-icon :icon="['fas', 'ticket']"/>
+                            OSTA PILET
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -197,7 +293,12 @@
                     <div class="grid-wrapper">
                       <div class="row">Row 1 Filmi Algus</div>
                       <div class="row">Row 2 CGI Stream</div>
-                      <div class="row"><button style="width: 80%"><font-awesome-icon :icon="['fas', 'video']" /> Vaata Treilerit</button></div>
+                      <div class="row">
+                        <button style="width: 80%">
+                          <font-awesome-icon :icon="['fas', 'video']"/>
+                          Vaata Treilerit
+                        </button>
+                      </div>
                     </div>
                   </div>
 
@@ -214,7 +315,12 @@
                       <div class="info-grid-wrapper">
                         <div class="row">Movie name</div>
                         <div class="row"></div>
-                        <div class="row"><button style="width: 50%"><font-awesome-icon :icon="['fas', 'ticket']" /> OSTA PILET</button></div>
+                        <div class="row">
+                          <button class="ticket-button">
+                            <font-awesome-icon :icon="['fas', 'ticket']"/>
+                            OSTA PILET
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -232,7 +338,12 @@
                     <div class="grid-wrapper">
                       <div class="row">Row 1 Filmi Algus</div>
                       <div class="row">Row 2 CGI Stream</div>
-                      <div class="row"><button style="width: 80%"><font-awesome-icon :icon="['fas', 'video']" /> Vaata Treilerit</button></div>
+                      <div class="row">
+                        <button style="width: 80%">
+                          <font-awesome-icon :icon="['fas', 'video']"/>
+                          Vaata Treilerit
+                        </button>
+                      </div>
                     </div>
                   </div>
 
@@ -249,7 +360,12 @@
                       <div class="info-grid-wrapper">
                         <div class="row">Movie name</div>
                         <div class="row"></div>
-                        <div class="row"><button style="width: 50%"><font-awesome-icon :icon="['fas', 'ticket']" /> OSTA PILET</button></div>
+                        <div class="row">
+                          <button class="ticket-button">
+                            <font-awesome-icon :icon="['fas', 'ticket']"/>
+                            OSTA PILET
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -267,7 +383,12 @@
                     <div class="grid-wrapper">
                       <div class="row">Row 1 Filmi Algus</div>
                       <div class="row">Row 2 CGI Stream</div>
-                      <div class="row"><button style="width: 80%"><font-awesome-icon :icon="['fas', 'video']" /> Vaata Treilerit</button></div>
+                      <div class="row">
+                        <button style="width: 80%">
+                          <font-awesome-icon :icon="['fas', 'video']"/>
+                          Vaata Treilerit
+                        </button>
+                      </div>
                     </div>
                   </div>
 
@@ -284,7 +405,12 @@
                       <div class="info-grid-wrapper">
                         <div class="row">Movie name</div>
                         <div class="row"></div>
-                        <div class="row"><button style="width: 50%"><font-awesome-icon :icon="['fas', 'ticket']" /> OSTA PILET</button></div>
+                        <div class="row">
+                          <button class="ticket-button">
+                            <font-awesome-icon :icon="['fas', 'ticket']"/>
+                            OSTA PILET
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -302,7 +428,12 @@
                     <div class="grid-wrapper">
                       <div class="row">Row 1 Filmi Algus</div>
                       <div class="row">Row 2 CGI Stream</div>
-                      <div class="row"><button style="width: 80%"><font-awesome-icon :icon="['fas', 'video']" /> Vaata Treilerit</button></div>
+                      <div class="row">
+                        <button style="width: 80%">
+                          <font-awesome-icon :icon="['fas', 'video']"/>
+                          Vaata Treilerit
+                        </button>
+                      </div>
                     </div>
                   </div>
 
@@ -319,7 +450,12 @@
                       <div class="info-grid-wrapper">
                         <div class="row">Movie name</div>
                         <div class="row"></div>
-                        <div class="row"><button style="width: 50%"><font-awesome-icon :icon="['fas', 'ticket']" /> OSTA PILET</button></div>
+                        <div class="row">
+                          <button class="ticket-button">
+                            <font-awesome-icon :icon="['fas', 'ticket']"/>
+                            OSTA PILET
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -337,7 +473,12 @@
                     <div class="grid-wrapper">
                       <div class="row">Row 1 Filmi Algus</div>
                       <div class="row">Row 2 CGI Stream</div>
-                      <div class="row"><button style="width: 80%"><font-awesome-icon :icon="['fas', 'video']" /> Vaata Treilerit</button></div>
+                      <div class="row">
+                        <button style="width: 80%">
+                          <font-awesome-icon :icon="['fas', 'video']"/>
+                          Vaata Treilerit
+                        </button>
+                      </div>
                     </div>
                   </div>
 
@@ -354,7 +495,12 @@
                       <div class="info-grid-wrapper">
                         <div class="row">Movie name</div>
                         <div class="row"></div>
-                        <div class="row"><button style="width: 50%"><font-awesome-icon :icon="['fas', 'ticket']" /> OSTA PILET</button></div>
+                        <div class="row">
+                          <button style="width: 50%">
+                            <font-awesome-icon :icon="['fas', 'ticket']"/>
+                            OSTA PILET
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -366,7 +512,6 @@
 
       </div>
       <div class="home-page-right-nav">
-        GG
       </div>
     </div>
     <!--FOOTER-->
@@ -386,7 +531,21 @@ export default {
       isScrolling: false
     }
   },
-  methods: {},
+  methods: {
+    toggleDropdown(button) {
+      const nextElement = button.nextElementSibling;
+      if (nextElement) {
+        nextElement.classList.toggle('active');
+      }
+    },
+
+    selectCheckboxItem(item) {
+      // Handle checkbox selection as needed
+      console.log('Selected:', item.textContent);
+      // Close the dropdown
+      item.closest('.dropdown-container').classList.remove('active');
+    },
+  },
 
 
 }
@@ -400,15 +559,15 @@ export default {
   min-height: 150vh;
   position: relative;
   background-size: cover;
-  background-color: black;
+  background-color: #000014;
   background-position: center;
 }
 
 /*BODY CSS*/
 .home-page-body {
   display: flex;
-  height: auto;
-  border: 1px solid white;
+  min-height: 100vh;
+  /*border: 1px solid white;*/
   overflow: hidden;
 }
 
@@ -417,7 +576,7 @@ export default {
   width: 10%;
   display: flex;
   height: auto;
-  border: 1px solid white;
+  /*border: 1px solid white;*/
 }
 
 .home-page-right-nav {
@@ -425,7 +584,7 @@ export default {
   width: 10%;
   display: flex;
   height: auto;
-  border: 1px solid white;
+  /*border: 1px solid white;*/
 }
 
 .home-page-centre-nav {
@@ -436,76 +595,205 @@ export default {
   justify-content: flex-start;
   width: 100%;
   min-height: auto;
-  border: 1px solid white;
+  /*border: 1px solid white;*/
 }
-.home-page-centre-upper-tabs {
-  padding: 15px;
-  width: 100%;
-  margin-top: 20px;
-  border: 1px solid white;
+
+.home-page-centre-upper-tabs2 {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 98%;
+  height: 88px;
+  /*border: 1px solid white;*/
   text-align: center;
   align-items: center;
-  justify-content: center;
-  border-radius: 20px;
-  background-color: #000014;
+  border-radius: 10px;
+  background-color: black;
+  margin: 20px;
+  padding: 0 16px;
+  justify-content: space-between;
+  overflow: visible;
 }
-.home-page-centre-lower-tabs{
+
+.day-picker_choice {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 500px;
+  height: 80px;
+  /*border: 1px solid white;*/
+  margin-right: 5px;
+  position: relative;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.filter-picker-choice {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 500px;
+  height: 80px;
+  margin-right: 5px;
+  position: relative;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #183153;
+  box-shadow: 0px 6px 24px 0px #000014;
+  cursor: pointer;
+  border: none;
+}
+.filter-picker-choice .dropdown-menu {
+  width: 200px;
+  height: auto;
+  background-color: #3c78b4;
+  border: #3c78a0 2px solid;
+  margin-left: 50px;
+  box-shadow: 0px 6px 24px 0px #000014;
+}
+
+.filter-picker-choice .dropdown-button {
+  background: #183153;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  border: none;
+  color: #3c78b4;
+}
+
+.filter-picker-choice .dropdown-button .dropdown-toggle {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  text-align: center;
+}
+.filter-picker-choice .checkbox label {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.filter-picker-choice .checkbox input {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  box-shadow: 0px 6px 24px 0px #000014;
+  margin-right: 20px;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+
+.day-choice-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 5px;
+  overflow: hidden;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #183153;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0px 6px 24px 0px #000014;
+  cursor: pointer;
+  border: none;
+  height: 100%;
+  color: #3c78b4;
+}
+
+.day-choice-button:active,
+.day-choice-button.active { /* For Bootstrap's 'active' class */
+  background: #3c78a0;
+  color: #000014;
+}
+
+
+.dropdown-button {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #183153;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  border: none;
+  color: #3c78b4;
+}
+
+.home-page-centre-lower-tabs {
   flex-direction: column;
   padding: 15px;
   width: 100%;
   margin-top: 20px;
-  border: 1px solid white;
+  /*border: 1px solid white;*/
   justify-content: flex-start;
   text-align: center;
   align-items: center;
   border-radius: 20px;
-  background-color: black;
+  background-color: #000014;
 }
 
-.movie-info-row{
+.movie-info-row {
   display: grid;
   align-items: stretch;
   width: 100%;
   height: 250px;
-  border: 1px solid white;
-  border-radius: 20px;
-  background-color: black;
+  border: 2px solid #3c78a0;
+  border-radius: 10px;
+  background-color: #000014;
   grid-template-columns: 1fr 1fr; /* Two equal columns */
   margin-bottom: 10px;
-}
-.movie-info-row:hover{
-  background-color: #001428;
-  cursor: pointer;
+  box-shadow: 0px 6px 24px 0px #183153;
+
 }
 
-.movie-row-left-box{
+/*.movie-info-row:hover{*/
+/*  background-color: #001428;*/
+/*  cursor: pointer;*/
+/*}*/
+
+.movie-row-left-box {
   flex: 1;
   box-sizing: border-box;
   margin-right: 40%;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  border-radius: 20px;
+  border-radius: 10px;
   height: 95%;
   margin-top: 5px;
   margin-left: 5px;
-  border: 1px solid white;
+  /*border: 1px solid white;*/
   overflow: hidden;
 }
+
 .movie-image {
-  width: 90%;
-  height: 90%;
-  margin-top: 5px;
+  width: 100%;
+  height: 100%;
   background-size: cover;
+  border-radius: 10px;
+
 }
 
-.movie-row-right-box{
+.movie-row-right-box {
   flex: 1;
   box-sizing: border-box;
   margin-left: -40%;
   font-size: 20px;
   color: #FFFFFF;
-  border: 1px solid white;
-  border-radius: 20px;
+  /*border: 1px solid white;*/
+  border-radius: 10px;
   height: 95%;
   margin-top: 5px;
   margin-right: 5px;
@@ -516,7 +804,7 @@ export default {
   display: flex;
   flex: 0 0 30%;
   box-sizing: border-box;
-  border: 1px solid white;
+  /*border: 1px solid white;*/
   border-radius: 20px;
 }
 
@@ -528,38 +816,39 @@ export default {
 
 .movie-time-container .row {
   text-align: center;
-  color: white;
+  color: #3c78b4;
   align-items: center;
   justify-content: center;
-  border: 1px solid white;
+  /*border: 1px solid white;*/
   width: 90%;
   margin-left: 10px;
 }
 
-.movie-info-container{
+.movie-info-container {
   display: flex;
   flex: 0 0 70%;
   box-sizing: border-box;
-  border: 1px solid white;
+  /*border: 1px solid white;*/
   border-radius: 20px;
 }
 
-.movie-info-container .row{
-  color: white;
+.movie-info-container .row {
+  color: #3c78b4;
   align-items: center;
-  border: 1px solid white;
+  /*border: 1px solid white;*/
   margin-left: 10px;
   text-align: start;
   justify-content: start;
   height: 100%;
 }
 
-.info-grid-wrapper{
+.info-grid-wrapper {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   width: 100%;
 
 }
+
 .info-column {
   flex: 1;
   display: flex;
@@ -567,7 +856,23 @@ export default {
   border-radius: 20px;
 }
 
-.dropdown{
-  margin-left: 15px;
+.trailer-button{
+  background-color: #183153;
+  border-radius: 5px;
+  height: 50px;
+  width: 200px !important;
+  border: #3c78b4 solid 1px;
+  color: #3c78a0;
 }
+
+.ticket-button{
+  background-color: #3c78a0;
+  border-radius: 5px;
+  height: 50px;
+  width: 200px !important;
+  border: #3c78b4 solid 1px;
+  color: #000014;
+}
+
+
 </style>

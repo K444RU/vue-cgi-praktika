@@ -3,15 +3,12 @@
     <img @click="goToHomePage" src="@/assets/cgi-stream-high-resolution-logo-transparent.png" alt="Logo" class="logo">
     <div class="header-left-side-row">
       <div class="header-left-side-cols">
-        <button >kinokava</button>
+        <p @click="goToHomePage" class="active" type="button" >Nadala kinokava</p>
       </div>
-      <div class="header-left-side-cols">
-        <button>kinokava</button>
-      </div>
+
     </div>
     <div class="header-right-side-row">
       <div class="header-right-side-cols">
-        <font-awesome-icon class="icons" :icon="['fas', 'magnifying-glass']"/>
       </div>
       <div class="header-right-side-cols" @click="goToLogin">
         <font-awesome-icon class="icons" :icon="['fas', 'circle-user']"/>
@@ -48,13 +45,13 @@ export default {
   box-sizing: border-box;
   background-color: #001428;
   justify-content: space-between;
-  background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0) 80%,
-      rgba(0, 0, 0, 0) 90%,
-      rgba(0, 0, 0, 0.6) 95%,
-      rgba(0, 0, 0, 0.8) 100%
-  );
+  /*background-image: linear-gradient(*/
+  /*    to bottom,*/
+  /*    rgba(0, 0, 0, 0) 80%,*/
+  /*    rgba(0, 0, 0, 0) 90%,*/
+  /*    rgba(0, 0, 0, 0.6) 95%,*/
+  /*    rgba(0, 0, 0, 0.8) 100%*/
+  /*);*/
 }
 
 .logo {
@@ -74,12 +71,11 @@ export default {
   flex: 8;
   height: 100%;
   display: flex;
-  border: 1px solid white;
+  /*border: 1px solid white;*/
 }
 
 .header-left-side-cols {
   width: 20%;
-  color: white;
   padding: 5px;
   height: 100%;
   display: flex;
@@ -87,14 +83,16 @@ export default {
   align-items: center;
   box-sizing: border-box;
   justify-content: center;
-  border: 1px solid white;
+  font-size: 20px;
+  color: #3c78b4;
+  /*border: 1px solid white;*/
 }
 
 .header-right-side-row {
   flex: 2;
   height: 100%;
   display: flex;
-  border: 1px solid white;
+  /*border: 1px solid white;*/
   margin-right: 160px;
 }
 
@@ -107,7 +105,7 @@ export default {
   align-items: center;
   box-sizing: border-box;
   justify-content: center;
-  border: 1px solid white;
+  /*border: 1px solid white;*/
 }
 
 /*BODY CSS*/
