@@ -153,18 +153,15 @@
               <!--MOVIE INFO BOX-->
               <div class="movie-info-row">
                 <div class="movie-row-left-box">
-                  <img class="movie-image" src="@/assets/cgi-stream-high-resolution-logo-transparent.png" alt="Logo">
+                  <img class="movie-image" src="@/assets/ducks.jpeg" alt="Logo">
                 </div>
                 <div class="movie-row-right-box">
                   <div class="movie-time-container">
                     <div class="grid-wrapper">
-                      <div class="row">Row 1 Filmi Algus</div>
-                      <div class="row">Row 2 CGI Stream</div>
+                      <div class="row">Filmi algus</div>
+                      <div class="row">CGI Stream</div>
                       <div class="row">
-                        <button class="trailer-button">
-                          <font-awesome-icon :icon="['fas', 'video']"/>
-                          Vaata Treilerit
-                        </button>
+                        Keel
                       </div>
                     </div>
                   </div>
@@ -172,15 +169,20 @@
                   <div class="movie-info-container">
                     <div class="info-column">
                       <div class="info-grid-wrapper">
-                        <div class="row">Filmi Nimi</div>
-                        <div class="row"></div>
-                        <div class="row">Keel • Vanusepiirang • Zanr</div>
+                        <div class="row">Filmi nimi</div>
+                        <div class="row">Vanusepiirang • Zanr</div>
+                        <div class="row">
+                          <button class="trailer-button">
+                            <font-awesome-icon :icon="['fas', 'video']"/>
+                            Vaata Treilerit
+                          </button>
+                        </div>
                       </div>
                     </div>
 
                     <div class="info-column">
                       <div class="info-grid-wrapper">
-                        <div class="row">Movie name</div>
+                        <div class="row"></div>
                         <div class="row"></div>
                         <div class="row">
                           <button class="ticket-button" >
@@ -193,6 +195,8 @@
                   </div>
                 </div>
               </div>
+              <!--MOVIE INFO BOX-->
+
               <div class="movie-info-row">
                 <div class="movie-row-left-box">
                   <img class="movie-image" src="@/assets/dune.jpg" alt="Logo">
@@ -200,13 +204,10 @@
                 <div class="movie-row-right-box">
                   <div class="movie-time-container">
                     <div class="grid-wrapper">
-                      <div class="row">DÜÜN</div>
-                      <div class="row">Row 2 CGI Stream</div>
+                      <div class="row">Filmi algus</div>
+                      <div class="row">CGI Stream</div>
                       <div class="row">
-                        <button class="trailer-button">
-                          <font-awesome-icon :icon="['fas', 'video']"/>
-                          Vaata Treilerit
-                        </button>
+                        Keel
                       </div>
                     </div>
                   </div>
@@ -214,18 +215,23 @@
                   <div class="movie-info-container">
                     <div class="info-column">
                       <div class="info-grid-wrapper">
-                        <div class="row">Filmi Nimi</div>
-                        <div class="row"></div>
-                        <div class="row">Keel • Vanusepiirang • Zanr</div>
+                        <div class="row">Filmi nimi</div>
+                        <div class="row">Vanusepiirang • Zanr</div>
+                        <div class="row">
+                          <button class="trailer-button">
+                            <font-awesome-icon :icon="['fas', 'video']"/>
+                            Vaata Treilerit
+                          </button>
+                        </div>
                       </div>
                     </div>
 
                     <div class="info-column">
                       <div class="info-grid-wrapper">
-                        <div class="row">Movie name</div>
+                        <div class="row"></div>
                         <div class="row"></div>
                         <div class="row">
-                          <button class="ticket-button">
+                          <button class="ticket-button" >
                             <font-awesome-icon :icon="['fas', 'ticket']"/>
                             OSTA PILET
                           </button>
@@ -238,7 +244,7 @@
 
             </div>
             <div class="tab-pane fade" id="pills-tuesday"
-                 role="tabpanel" aria-labelledby="pills-tuesday-tab" tabindex="0">TEISIPAEV
+                 role="tabpanel" aria-labelledby="pills-tuesday-tab" tabindex="0">
               <div class="movie-info-row">
                 <div class="movie-row-left-box">
                   <img class="movie-image" src="@/assets/cgi-stream-high-resolution-logo-transparent.png" alt="Logo">
@@ -246,13 +252,10 @@
                 <div class="movie-row-right-box">
                   <div class="movie-time-container">
                     <div class="grid-wrapper">
-                      <div class="row">Row 1 Filmi Algus</div>
-                      <div class="row">Row 2 CGI Stream</div>
+                      <div class="row">Filmi algus</div>
+                      <div class="row">CGI Stream</div>
                       <div class="row">
-                        <button style="width: 80%">
-                          <font-awesome-icon :icon="['fas', 'video']"/>
-                          Vaata Treilerit
-                        </button>
+                        Keel
                       </div>
                     </div>
                   </div>
@@ -260,18 +263,23 @@
                   <div class="movie-info-container">
                     <div class="info-column">
                       <div class="info-grid-wrapper">
-                        <div class="row">Filmi Nimi</div>
-                        <div class="row"></div>
-                        <div class="row">Keel • Vanusepiirang • Zanr</div>
+                        <div class="row">Filmi nimi</div>
+                        <div class="row">Vanusepiirang • Zanr</div>
+                        <div class="row">
+                          <button class="trailer-button">
+                            <font-awesome-icon :icon="['fas', 'video']"/>
+                            Vaata Treilerit
+                          </button>
+                        </div>
                       </div>
                     </div>
 
                     <div class="info-column">
                       <div class="info-grid-wrapper">
-                        <div class="row">Movie name</div>
+                        <div class="row"></div>
                         <div class="row"></div>
                         <div class="row">
-                          <button class="ticket-button">
+                          <button class="ticket-button" >
                             <font-awesome-icon :icon="['fas', 'ticket']"/>
                             OSTA PILET
                           </button>
@@ -281,9 +289,10 @@
                   </div>
                 </div>
               </div>
+              <!--MOVIE INFO BOX-->
             </div>
             <div class="tab-pane fade" id="pills-wednesday"
-                 role="tabpanel" aria-labelledby="pills-wednesday-tab" tabindex="0">KOLMAPAEV
+                 role="tabpanel" aria-labelledby="pills-wednesday-tab" tabindex="0">
               <div class="movie-info-row">
                 <div class="movie-row-left-box">
                   <img class="movie-image" src="@/assets/cgi-stream-high-resolution-logo-transparent.png" alt="Logo">
@@ -291,13 +300,10 @@
                 <div class="movie-row-right-box">
                   <div class="movie-time-container">
                     <div class="grid-wrapper">
-                      <div class="row">Row 1 Filmi Algus</div>
-                      <div class="row">Row 2 CGI Stream</div>
+                      <div class="row">Filmi algus</div>
+                      <div class="row">CGI Stream</div>
                       <div class="row">
-                        <button style="width: 80%">
-                          <font-awesome-icon :icon="['fas', 'video']"/>
-                          Vaata Treilerit
-                        </button>
+                        Keel
                       </div>
                     </div>
                   </div>
@@ -305,18 +311,23 @@
                   <div class="movie-info-container">
                     <div class="info-column">
                       <div class="info-grid-wrapper">
-                        <div class="row">Filmi Nimi</div>
-                        <div class="row"></div>
-                        <div class="row">Keel • Vanusepiirang • Zanr</div>
+                        <div class="row">Filmi nimi</div>
+                        <div class="row">Vanusepiirang • Zanr</div>
+                        <div class="row">
+                          <button class="trailer-button">
+                            <font-awesome-icon :icon="['fas', 'video']"/>
+                            Vaata Treilerit
+                          </button>
+                        </div>
                       </div>
                     </div>
 
                     <div class="info-column">
                       <div class="info-grid-wrapper">
-                        <div class="row">Movie name</div>
+                        <div class="row"></div>
                         <div class="row"></div>
                         <div class="row">
-                          <button class="ticket-button">
+                          <button class="ticket-button" >
                             <font-awesome-icon :icon="['fas', 'ticket']"/>
                             OSTA PILET
                           </button>
@@ -326,9 +337,10 @@
                   </div>
                 </div>
               </div>
+              <!--MOVIE INFO BOX-->
             </div>
             <div class="tab-pane fade" id="pills-thursday"
-                 role="tabpanel" aria-labelledby="pills-thursday-tab" tabindex="0">NELJAPAEV
+                 role="tabpanel" aria-labelledby="pills-thursday-tab" tabindex="0">
               <div class="movie-info-row">
                 <div class="movie-row-left-box">
                   <img class="movie-image" src="@/assets/cgi-stream-high-resolution-logo-transparent.png" alt="Logo">
@@ -336,13 +348,10 @@
                 <div class="movie-row-right-box">
                   <div class="movie-time-container">
                     <div class="grid-wrapper">
-                      <div class="row">Row 1 Filmi Algus</div>
-                      <div class="row">Row 2 CGI Stream</div>
+                      <div class="row">Filmi algus</div>
+                      <div class="row">CGI Stream</div>
                       <div class="row">
-                        <button style="width: 80%">
-                          <font-awesome-icon :icon="['fas', 'video']"/>
-                          Vaata Treilerit
-                        </button>
+                        Keel
                       </div>
                     </div>
                   </div>
@@ -350,18 +359,23 @@
                   <div class="movie-info-container">
                     <div class="info-column">
                       <div class="info-grid-wrapper">
-                        <div class="row">Filmi Nimi</div>
-                        <div class="row"></div>
-                        <div class="row">Keel • Vanusepiirang • Zanr</div>
+                        <div class="row">Filmi nimi</div>
+                        <div class="row">Vanusepiirang • Zanr</div>
+                        <div class="row">
+                          <button class="trailer-button">
+                            <font-awesome-icon :icon="['fas', 'video']"/>
+                            Vaata Treilerit
+                          </button>
+                        </div>
                       </div>
                     </div>
 
                     <div class="info-column">
                       <div class="info-grid-wrapper">
-                        <div class="row">Movie name</div>
+                        <div class="row"></div>
                         <div class="row"></div>
                         <div class="row">
-                          <button class="ticket-button">
+                          <button class="ticket-button" >
                             <font-awesome-icon :icon="['fas', 'ticket']"/>
                             OSTA PILET
                           </button>
@@ -371,9 +385,10 @@
                   </div>
                 </div>
               </div>
+              <!--MOVIE INFO BOX-->
             </div>
             <div class="tab-pane fade" id="pills-friday"
-                 role="tabpanel" aria-labelledby="pills-friday-tab" tabindex="0">REEDE
+                 role="tabpanel" aria-labelledby="pills-friday-tab" tabindex="0">
               <div class="movie-info-row">
                 <div class="movie-row-left-box">
                   <img class="movie-image" src="@/assets/cgi-stream-high-resolution-logo-transparent.png" alt="Logo">
@@ -381,13 +396,10 @@
                 <div class="movie-row-right-box">
                   <div class="movie-time-container">
                     <div class="grid-wrapper">
-                      <div class="row">Row 1 Filmi Algus</div>
-                      <div class="row">Row 2 CGI Stream</div>
+                      <div class="row">Filmi algus</div>
+                      <div class="row">CGI Stream</div>
                       <div class="row">
-                        <button style="width: 80%">
-                          <font-awesome-icon :icon="['fas', 'video']"/>
-                          Vaata Treilerit
-                        </button>
+                        Keel
                       </div>
                     </div>
                   </div>
@@ -395,18 +407,23 @@
                   <div class="movie-info-container">
                     <div class="info-column">
                       <div class="info-grid-wrapper">
-                        <div class="row">Filmi Nimi</div>
-                        <div class="row"></div>
-                        <div class="row">Keel • Vanusepiirang • Zanr</div>
+                        <div class="row">Filmi nimi</div>
+                        <div class="row">Vanusepiirang • Zanr</div>
+                        <div class="row">
+                          <button class="trailer-button">
+                            <font-awesome-icon :icon="['fas', 'video']"/>
+                            Vaata Treilerit
+                          </button>
+                        </div>
                       </div>
                     </div>
 
                     <div class="info-column">
                       <div class="info-grid-wrapper">
-                        <div class="row">Movie name</div>
+                        <div class="row"></div>
                         <div class="row"></div>
                         <div class="row">
-                          <button class="ticket-button">
+                          <button class="ticket-button" >
                             <font-awesome-icon :icon="['fas', 'ticket']"/>
                             OSTA PILET
                           </button>
@@ -416,9 +433,10 @@
                   </div>
                 </div>
               </div>
+              <!--MOVIE INFO BOX-->
             </div>
             <div class="tab-pane fade" id="pills-saturday"
-                 role="tabpanel" aria-labelledby="pills-saturday-tab" tabindex="0">LAUPÄEV
+                 role="tabpanel" aria-labelledby="pills-saturday-tab" tabindex="0">
               <div class="movie-info-row">
                 <div class="movie-row-left-box">
                   <img class="movie-image" src="@/assets/cgi-stream-high-resolution-logo-transparent.png" alt="Logo">
@@ -426,13 +444,10 @@
                 <div class="movie-row-right-box">
                   <div class="movie-time-container">
                     <div class="grid-wrapper">
-                      <div class="row">Row 1 Filmi Algus</div>
-                      <div class="row">Row 2 CGI Stream</div>
+                      <div class="row">Filmi algus</div>
+                      <div class="row">CGI Stream</div>
                       <div class="row">
-                        <button style="width: 80%">
-                          <font-awesome-icon :icon="['fas', 'video']"/>
-                          Vaata Treilerit
-                        </button>
+                        Keel
                       </div>
                     </div>
                   </div>
@@ -440,18 +455,23 @@
                   <div class="movie-info-container">
                     <div class="info-column">
                       <div class="info-grid-wrapper">
-                        <div class="row">Filmi Nimi</div>
-                        <div class="row"></div>
-                        <div class="row">Keel • Vanusepiirang • Zanr</div>
+                        <div class="row">Filmi nimi</div>
+                        <div class="row">Vanusepiirang • Zanr</div>
+                        <div class="row">
+                          <button class="trailer-button">
+                            <font-awesome-icon :icon="['fas', 'video']"/>
+                            Vaata Treilerit
+                          </button>
+                        </div>
                       </div>
                     </div>
 
                     <div class="info-column">
                       <div class="info-grid-wrapper">
-                        <div class="row">Movie name</div>
+                        <div class="row"></div>
                         <div class="row"></div>
                         <div class="row">
-                          <button class="ticket-button">
+                          <button class="ticket-button" >
                             <font-awesome-icon :icon="['fas', 'ticket']"/>
                             OSTA PILET
                           </button>
@@ -461,9 +481,10 @@
                   </div>
                 </div>
               </div>
+              <!--MOVIE INFO BOX-->
             </div>
             <div class="tab-pane fade" id="pills-sunday"
-                 role="tabpanel" aria-labelledby="pills-sunday-tab" tabindex="0">PÜHAPÄEV
+                 role="tabpanel" aria-labelledby="pills-sunday-tab" tabindex="0">
               <div class="movie-info-row">
                 <div class="movie-row-left-box">
                   <img class="movie-image" src="@/assets/cgi-stream-high-resolution-logo-transparent.png" alt="Logo">
@@ -471,13 +492,10 @@
                 <div class="movie-row-right-box">
                   <div class="movie-time-container">
                     <div class="grid-wrapper">
-                      <div class="row">Row 1 Filmi Algus</div>
-                      <div class="row">Row 2 CGI Stream</div>
+                      <div class="row">Filmi algus</div>
+                      <div class="row">CGI Stream</div>
                       <div class="row">
-                        <button style="width: 80%">
-                          <font-awesome-icon :icon="['fas', 'video']"/>
-                          Vaata Treilerit
-                        </button>
+                        Keel
                       </div>
                     </div>
                   </div>
@@ -485,18 +503,23 @@
                   <div class="movie-info-container">
                     <div class="info-column">
                       <div class="info-grid-wrapper">
-                        <div class="row">Filmi Nimi</div>
-                        <div class="row"></div>
-                        <div class="row">Keel • Vanusepiirang • Zanr</div>
+                        <div class="row">Filmi nimi</div>
+                        <div class="row">Vanusepiirang • Zanr</div>
+                        <div class="row">
+                          <button class="trailer-button">
+                            <font-awesome-icon :icon="['fas', 'video']"/>
+                            Vaata Treilerit
+                          </button>
+                        </div>
                       </div>
                     </div>
 
                     <div class="info-column">
                       <div class="info-grid-wrapper">
-                        <div class="row">Movie name</div>
+                        <div class="row"></div>
                         <div class="row"></div>
                         <div class="row">
-                          <button style="width: 50%">
+                          <button class="ticket-button" >
                             <font-awesome-icon :icon="['fas', 'ticket']"/>
                             OSTA PILET
                           </button>
@@ -506,6 +529,7 @@
                   </div>
                 </div>
               </div>
+              <!--MOVIE INFO BOX-->
             </div>
           </div>
         </div>
@@ -532,19 +556,7 @@ export default {
     }
   },
   methods: {
-    toggleDropdown(button) {
-      const nextElement = button.nextElementSibling;
-      if (nextElement) {
-        nextElement.classList.toggle('active');
-      }
-    },
 
-    selectCheckboxItem(item) {
-      // Handle checkbox selection as needed
-      console.log('Selected:', item.textContent);
-      // Close the dropdown
-      item.closest('.dropdown-container').classList.remove('active');
-    },
   },
 
 
@@ -552,6 +564,8 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300&family=Permanent+Marker&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Smooch&display=swap');
+
 /*HEADER CSS*/
 
 .home-page-background {
@@ -566,7 +580,7 @@ export default {
 /*BODY CSS*/
 .home-page-body {
   display: flex;
-  min-height: 100vh;
+  min-height: 120vh;
   /*border: 1px solid white;*/
   overflow: hidden;
 }
@@ -595,6 +609,8 @@ export default {
   justify-content: flex-start;
   width: 100%;
   min-height: auto;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
   /*border: 1px solid white;*/
 }
 
@@ -608,11 +624,11 @@ export default {
   text-align: center;
   align-items: center;
   border-radius: 10px;
-  background-color: black;
   margin: 20px;
   padding: 0 16px;
   justify-content: space-between;
   overflow: visible;
+
 }
 
 .day-picker_choice {
@@ -654,6 +670,7 @@ export default {
   border: #3c78a0 2px solid;
   margin-left: 50px;
   box-shadow: 0px 6px 24px 0px #000014;
+  font-family: "Montserrat", sans-serif;
 }
 
 .filter-picker-choice .dropdown-button {
@@ -699,19 +716,21 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #183153;
+  background: #3c78b4;
   font-family: "Montserrat", sans-serif;
   box-shadow: 0px 6px 24px 0px #000014;
   cursor: pointer;
   border: none;
   height: 100%;
-  color: #3c78b4;
+  color: #000014;
 }
 
 .day-choice-button:active,
 .day-choice-button.active { /* For Bootstrap's 'active' class */
-  background: #3c78a0;
-  color: #000014;
+  background: #000014;
+  color: white;
+  box-shadow: 0px 6px 24px 0px #183153;
+
 }
 
 
@@ -729,7 +748,7 @@ export default {
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
   border: none;
-  color: #3c78b4;
+  color: #3c78a0 !important;
 }
 
 .home-page-centre-lower-tabs {
@@ -750,12 +769,12 @@ export default {
   align-items: stretch;
   width: 100%;
   height: 250px;
-  border: 2px solid #3c78a0;
+  /*border: 2px solid #183153;*/
   border-radius: 10px;
-  background-color: #000014;
+  background-color: #001428;
   grid-template-columns: 1fr 1fr; /* Two equal columns */
-  margin-bottom: 10px;
-  box-shadow: 0px 6px 24px 0px #183153;
+  margin-bottom: 20px;
+  /*box-shadow: 0px 6px 24px 0px #183153;*/
 
 }
 
@@ -816,15 +835,21 @@ export default {
 
 .movie-time-container .row {
   text-align: center;
-  color: #3c78b4;
+  color: white;
   align-items: center;
   justify-content: center;
   /*border: 1px solid white;*/
   width: 90%;
   margin-left: 10px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 500;
+  font-size: 26px;
 }
 
 .movie-info-container {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 500;
+  font-size: 25px;
   display: flex;
   flex: 0 0 70%;
   box-sizing: border-box;
@@ -833,7 +858,7 @@ export default {
 }
 
 .movie-info-container .row {
-  color: #3c78b4;
+  color: white;
   align-items: center;
   /*border: 1px solid white;*/
   margin-left: 10px;
@@ -857,21 +882,25 @@ export default {
 }
 
 .trailer-button{
-  background-color: #183153;
+  background-color: #3c78b4;
   border-radius: 5px;
   height: 50px;
-  width: 200px !important;
+  width: 210px !important;
   border: #3c78b4 solid 1px;
-  color: #3c78a0;
+  color: #001428;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
 }
 
 .ticket-button{
-  background-color: #3c78a0;
+  background-color: #3c78b4;
   border-radius: 5px;
   height: 50px;
   width: 200px !important;
   border: #3c78b4 solid 1px;
   color: #000014;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
 }
 
 

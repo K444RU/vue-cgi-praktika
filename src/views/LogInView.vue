@@ -99,13 +99,16 @@ export default {
   background-color: #001428;
   padding: 2rem;
   color: rgba(243, 244, 246, 1);
+  box-shadow: 0px 6px 24px 0px #183153;
+
 }
 
 .title {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 700;
   text-align: center;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 700;
 }
 
 .form {
@@ -117,34 +120,29 @@ export default {
   font-size: 0.875rem;
   line-height: 1.25rem;
   margin-bottom: 25px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+
 }
 
 .input-group label {
   display: block;
-  color: rgba(156, 163, 175, 1);
+  color: white;
   margin-bottom: 4px;
 }
 
 .input-group input {
   width: 100%;
-  border: 1px solid rgba(55, 65, 81, 1);
+  border: 1px solid #3c78b4;
   outline: 0;
   background-color: #001428;
   padding: 0.75rem 1rem;
   color: rgba(243, 244, 246, 1);
+  border-radius: 5px;
 }
 
 .input-group input:focus {
   border-color: #3c78b4;
-}
-
-.forgot {
-  display: flex;
-  justify-content: flex-end;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  color: rgba(156, 163, 175,1);
-  margin: 8px 0 14px 0;
 }
 
 .forgot a,.signup a {
@@ -166,53 +164,8 @@ export default {
   color: rgba(17, 24, 39, 1);
   border: none;
   border-radius: 0.375rem;
-  font-weight: 600;
-}
-
-.social-message {
-  display: flex;
-  align-items: center;
-  padding-top: 1rem;
-}
-
-.line {
-  height: 1px;
-  flex: 1 1 0%;
-  background-color: rgba(55, 65, 81, 1);
-}
-
-.social-message .message {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  color: #3c78b4;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-}
-
-.social-icons .icon {
-  border-radius: 0.125rem;
-  padding: 0.75rem;
-  border: none;
-  background-color: transparent;
-  margin-left: 8px;
-}
-
-.social-icons .icon svg {
-  height: 1.25rem;
-  width: 1.25rem;
-  fill: #3c78b4;
-}
-
-.signup {
-  text-align: center;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  color: rgba(156, 163, 175, 1);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 500;
 }
 
 </style>

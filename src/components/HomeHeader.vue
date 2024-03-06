@@ -31,6 +31,8 @@ export default {
 }
 </script>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300&family=Permanent+Marker&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Smooch&display=swap');
+
 /*HEADER CSS*/
 
 .home-page-header {
@@ -45,6 +47,8 @@ export default {
   box-sizing: border-box;
   background-color: #001428;
   justify-content: space-between;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 500;
   /*background-image: linear-gradient(*/
   /*    to bottom,*/
   /*    rgba(0, 0, 0, 0) 80%,*/

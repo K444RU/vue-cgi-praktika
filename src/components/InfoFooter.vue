@@ -100,6 +100,8 @@ ul {
 }
 
 .footer-section {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
   background: black;
   position: relative;
   /*margin-top: 200px;*/
