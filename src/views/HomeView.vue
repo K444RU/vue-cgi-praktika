@@ -12,81 +12,23 @@
       <div class="home-page-centre-nav">
         <div class="home-page-centre-upper-tabs2">
           <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-            <div class="day-picker_choice">
+            <div class="day-picker_choice" v-for="day in weekDaysResponse" :key="day">
               <li class="nav-item" role="presentation">
-                <button class="day-choice-button active" id="pills-monday-tab"
-                        data-bs-toggle="pill" data-bs-target="#pills-monday"
-                        type="button" role="tab" aria-controls="pills-monday"
-                        aria-selected="true"
+                <button class="day-choice-button" :class="{ 'active': isActiveDay(day) }"
+                        :id="'pills-' + day.toLowerCase() + '-tab'"
+                        @click="selectDay(day)"
+                        type="button" role="tab" :aria-controls="'pills-' + day.toLowerCase()"
+                        :aria-selected="isActiveDay(day)"
                 >
-                  <span>Esmaspaev</span>
-                </button>
-              </li>
-            </div>
-
-            <div class="day-picker_choice">
-              <li class="nav-item" role="presentation">
-                <button class="day-choice-button" id="pills-tuesday-tab"
-                        data-bs-toggle="pill" data-bs-target="#pills-tuesday"
-                        type="button" role="tab" aria-controls="pills-tuesday"
-                        aria-selected="false">Teisipaev.
-                </button>
-              </li>
-            </div>
-
-            <div class="day-picker_choice">
-              <li class="nav-item" role="presentation">
-                <button class="day-choice-button" id="pills-wednesday-tab"
-                        data-bs-toggle="pill" data-bs-target="#pills-wednesday"
-                        type="button" role="tab" aria-controls="pills-wednesday"
-                        aria-selected="false">Kolmapaev.
-                </button>
-              </li>
-            </div>
-
-            <div class="day-picker_choice">
-              <li class="nav-item" role="presentation">
-                <button class="day-choice-button" id="pills-thursday-tab"
-                        data-bs-toggle="pill" data-bs-target="#pills-thursday"
-                        type="button" role="tab" aria-controls="pills-thursday"
-                        aria-selected="false">Neljapaev.
-                </button>
-              </li>
-            </div>
-
-            <div class="day-picker_choice">
-              <li class="nav-item" role="presentation">
-                <button class="day-choice-button" id="pills-friday-tab"
-                        data-bs-toggle="pill" data-bs-target="#pills-friday"
-                        type="button" role="tab" aria-controls="pills-friday"
-                        aria-selected="false">Reede.
-                </button>
-              </li>
-            </div>
-
-            <div class="day-picker_choice">
-              <li class="nav-item" role="presentation">
-                <button class="day-choice-button" id="pills-saturday-tab"
-                        data-bs-toggle="pill" data-bs-target="#pills-saturday"
-                        type="button" role="tab" aria-controls="pills-saturday"
-                        aria-selected="false">Laupaev.
-                </button>
-              </li>
-            </div>
-
-            <div class="day-picker_choice">
-              <li class="nav-item" role="presentation">
-                <button class="day-choice-button" id="pills-sunday-tab"
-                        data-bs-toggle="pill" data-bs-target="#pills-sunday"
-                        type="button" role="tab" aria-controls="pills-sunday"
-                        aria-selected="false">Puhapaev.
+                  <span>{{ getDayName(day) }}</span>
                 </button>
               </li>
             </div>
 
             <div class="filter-picker-choice">
               <div class="dropdown">
-                <button class="dropdown-button dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="dropdown-button dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <font-awesome-icon :icon="['fas', 'film']"/>  Zanr
                 </button>
                 <ul class="dropdown-menu">
@@ -149,368 +91,32 @@
             </div>
           </ul>
         </div>
-        <!--NEW UPPER BUTTONS DAY PICKERS-->
 
 
         <div class="home-page-centre-lower-tabs">
           <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-monday"
-                 role="tabpanel" aria-labelledby="pills-monday-tab" tabindex="0">
-              <!--MOVIE INFO BOX-->
-              <div class="movie-info-row">
+            <div v-for="day in weekDaysResponse" :key="day" class="tab-pane fade show"
+                 :class="{ 'active': isActiveDay(day) }"
+                 :id="'pills-' + day.toLowerCase()"
+                 role="tabpanel" :aria-labelledby="'pills-' + day.toLowerCase() + '-tab'" tabindex="0">
+              <div v-for="movie in moviesByDay[day]" :key="movie.id" class="movie-info-row">
                 <div class="movie-row-left-box">
-                  <img class="movie-image" src="@/assets/ducks.jpeg" alt="Logo">
+                  <img class="movie-image" :src="movie.imageUrl" alt="Movie Poster">
                 </div>
                 <div class="movie-row-right-box">
                   <div class="movie-time-container">
                     <div class="grid-wrapper">
-                      <div class="row">Filmi algus</div>
+                      <div class="row">Filmi algus: {{ movie.time }}</div>
                       <div class="row">CGI Stream</div>
-                      <div class="row">
-                        Keel
-                      </div>
+                      <div class="row">Keel: {{ movie.language }}</div>
                     </div>
                   </div>
 
                   <div class="movie-info-container">
                     <div class="info-column">
                       <div class="info-grid-wrapper">
-                        <div class="row">Filmi nimi</div>
-                        <div class="row">Vanusepiirang • Zanr</div>
-                        <div class="row">
-                          <button class="trailer-button">
-                            <font-awesome-icon :icon="['fas', 'video']"/>
-                            Vaata Treilerit
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="info-column">
-                      <div class="info-grid-wrapper">
-                        <div class="row"></div>
-                        <div class="row"></div>
-                        <div class="row">
-                          <button class="ticket-button" >
-                            <font-awesome-icon :icon="['fas', 'ticket']"/>
-                            OSTA PILET
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--MOVIE INFO BOX-->
-
-              <div class="movie-info-row">
-                <div class="movie-row-left-box">
-                  <img class="movie-image" src="@/assets/dune.jpg" alt="Logo">
-                </div>
-                <div class="movie-row-right-box">
-                  <div class="movie-time-container">
-                    <div class="grid-wrapper">
-                      <div class="row">Filmi algus</div>
-                      <div class="row">CGI Stream</div>
-                      <div class="row">
-                        Keel
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="movie-info-container">
-                    <div class="info-column">
-                      <div class="info-grid-wrapper">
-                        <div class="row">Filmi nimi</div>
-                        <div class="row">Vanusepiirang • Zanr</div>
-                        <div class="row">
-                          <button class="trailer-button">
-                            <font-awesome-icon :icon="['fas', 'video']"/>
-                            Vaata Treilerit
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="info-column">
-                      <div class="info-grid-wrapper">
-                        <div class="row"></div>
-                        <div class="row"></div>
-                        <div class="row">
-                          <button class="ticket-button" >
-                            <font-awesome-icon :icon="['fas', 'ticket']"/>
-                            OSTA PILET
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            <div class="tab-pane fade" id="pills-tuesday"
-                 role="tabpanel" aria-labelledby="pills-tuesday-tab" tabindex="0">
-              <div class="movie-info-row">
-                <div class="movie-row-left-box">
-                  <img class="movie-image" src="@/assets/cgi-stream-high-resolution-logo-transparent.png" alt="Logo">
-                </div>
-                <div class="movie-row-right-box">
-                  <div class="movie-time-container">
-                    <div class="grid-wrapper">
-                      <div class="row">Filmi algus</div>
-                      <div class="row">CGI Stream</div>
-                      <div class="row">
-                        Keel
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="movie-info-container">
-                    <div class="info-column">
-                      <div class="info-grid-wrapper">
-                        <div class="row">Filmi nimi</div>
-                        <div class="row">Vanusepiirang • Zanr</div>
-                        <div class="row">
-                          <button class="trailer-button">
-                            <font-awesome-icon :icon="['fas', 'video']"/>
-                            Vaata Treilerit
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="info-column">
-                      <div class="info-grid-wrapper">
-                        <div class="row"></div>
-                        <div class="row"></div>
-                        <div class="row">
-                          <button class="ticket-button" >
-                            <font-awesome-icon :icon="['fas', 'ticket']"/>
-                            OSTA PILET
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--MOVIE INFO BOX-->
-            </div>
-            <div class="tab-pane fade" id="pills-wednesday"
-                 role="tabpanel" aria-labelledby="pills-wednesday-tab" tabindex="0">
-              <div class="movie-info-row">
-                <div class="movie-row-left-box">
-                  <img class="movie-image" src="@/assets/cgi-stream-high-resolution-logo-transparent.png" alt="Logo">
-                </div>
-                <div class="movie-row-right-box">
-                  <div class="movie-time-container">
-                    <div class="grid-wrapper">
-                      <div class="row">Filmi algus</div>
-                      <div class="row">CGI Stream</div>
-                      <div class="row">
-                        Keel
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="movie-info-container">
-                    <div class="info-column">
-                      <div class="info-grid-wrapper">
-                        <div class="row">Filmi nimi</div>
-                        <div class="row">Vanusepiirang • Zanr</div>
-                        <div class="row">
-                          <button class="trailer-button">
-                            <font-awesome-icon :icon="['fas', 'video']"/>
-                            Vaata Treilerit
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="info-column">
-                      <div class="info-grid-wrapper">
-                        <div class="row"></div>
-                        <div class="row"></div>
-                        <div class="row">
-                          <button class="ticket-button" >
-                            <font-awesome-icon :icon="['fas', 'ticket']"/>
-                            OSTA PILET
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--MOVIE INFO BOX-->
-            </div>
-            <div class="tab-pane fade" id="pills-thursday"
-                 role="tabpanel" aria-labelledby="pills-thursday-tab" tabindex="0">
-              <div class="movie-info-row">
-                <div class="movie-row-left-box">
-                  <img class="movie-image" src="@/assets/cgi-stream-high-resolution-logo-transparent.png" alt="Logo">
-                </div>
-                <div class="movie-row-right-box">
-                  <div class="movie-time-container">
-                    <div class="grid-wrapper">
-                      <div class="row">Filmi algus</div>
-                      <div class="row">CGI Stream</div>
-                      <div class="row">
-                        Keel
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="movie-info-container">
-                    <div class="info-column">
-                      <div class="info-grid-wrapper">
-                        <div class="row">Filmi nimi</div>
-                        <div class="row">Vanusepiirang • Zanr</div>
-                        <div class="row">
-                          <button class="trailer-button">
-                            <font-awesome-icon :icon="['fas', 'video']"/>
-                            Vaata Treilerit
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="info-column">
-                      <div class="info-grid-wrapper">
-                        <div class="row"></div>
-                        <div class="row"></div>
-                        <div class="row">
-                          <button class="ticket-button" >
-                            <font-awesome-icon :icon="['fas', 'ticket']"/>
-                            OSTA PILET
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--MOVIE INFO BOX-->
-            </div>
-            <div class="tab-pane fade" id="pills-friday"
-                 role="tabpanel" aria-labelledby="pills-friday-tab" tabindex="0">
-              <div class="movie-info-row">
-                <div class="movie-row-left-box">
-                  <img class="movie-image" src="@/assets/cgi-stream-high-resolution-logo-transparent.png" alt="Logo">
-                </div>
-                <div class="movie-row-right-box">
-                  <div class="movie-time-container">
-                    <div class="grid-wrapper">
-                      <div class="row">Filmi algus</div>
-                      <div class="row">CGI Stream</div>
-                      <div class="row">
-                        Keel
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="movie-info-container">
-                    <div class="info-column">
-                      <div class="info-grid-wrapper">
-                        <div class="row">Filmi nimi</div>
-                        <div class="row">Vanusepiirang • Zanr</div>
-                        <div class="row">
-                          <button class="trailer-button">
-                            <font-awesome-icon :icon="['fas', 'video']"/>
-                            Vaata Treilerit
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="info-column">
-                      <div class="info-grid-wrapper">
-                        <div class="row"></div>
-                        <div class="row"></div>
-                        <div class="row">
-                          <button class="ticket-button" >
-                            <font-awesome-icon :icon="['fas', 'ticket']"/>
-                            OSTA PILET
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--MOVIE INFO BOX-->
-            </div>
-            <div class="tab-pane fade" id="pills-saturday"
-                 role="tabpanel" aria-labelledby="pills-saturday-tab" tabindex="0">
-              <div class="movie-info-row">
-                <div class="movie-row-left-box">
-                  <img class="movie-image" src="@/assets/cgi-stream-high-resolution-logo-transparent.png" alt="Logo">
-                </div>
-                <div class="movie-row-right-box">
-                  <div class="movie-time-container">
-                    <div class="grid-wrapper">
-                      <div class="row">Filmi algus</div>
-                      <div class="row">CGI Stream</div>
-                      <div class="row">
-                        Keel
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="movie-info-container">
-                    <div class="info-column">
-                      <div class="info-grid-wrapper">
-                        <div class="row">Filmi nimi</div>
-                        <div class="row">Vanusepiirang • Zanr</div>
-                        <div class="row">
-                          <button class="trailer-button">
-                            <font-awesome-icon :icon="['fas', 'video']"/>
-                            Vaata Treilerit
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="info-column">
-                      <div class="info-grid-wrapper">
-                        <div class="row"></div>
-                        <div class="row"></div>
-                        <div class="row">
-                          <button class="ticket-button" >
-                            <font-awesome-icon :icon="['fas', 'ticket']"/>
-                            OSTA PILET
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--MOVIE INFO BOX-->
-            </div>
-            <div class="tab-pane fade" id="pills-sunday"
-                 role="tabpanel" aria-labelledby="pills-sunday-tab" tabindex="0">
-              <div class="movie-info-row">
-                <div class="movie-row-left-box">
-                  <img class="movie-image" src="@/assets/cgi-stream-high-resolution-logo-transparent.png" alt="Logo">
-                </div>
-                <div class="movie-row-right-box">
-                  <div class="movie-time-container">
-                    <div class="grid-wrapper">
-                      <div class="row">Filmi algus</div>
-                      <div class="row">CGI Stream</div>
-                      <div class="row">
-                        Keel
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="movie-info-container">
-                    <div class="info-column">
-                      <div class="info-grid-wrapper">
-                        <div class="row">Filmi nimi</div>
-                        <div class="row">Vanusepiirang • Zanr</div>
+                        <div class="row">Filmi nimi: {{ movie.name }}</div>
+                        <div class="row">Vanusepiirang: {{ movie.ageRestriction }} • Zanr: {{ movie.genre }}</div>
                         <div class="row">
                           <button class="trailer-button">
                             <font-awesome-icon :icon="['fas', 'video']"/>
@@ -552,28 +158,72 @@
 <script>
 import InfoFooter from "@/components/InfoFooter";
 import HomeHeader from "@/components/HomeHeader";
+import {reactive} from "vue";
+
 
 export default {
   name: 'HomeView',
   components: { HomeHeader, InfoFooter },
   data() {
     return {
+      activeDay: 'MONDAY',
       isScrolling: false,
       weekDaysResponse: [],
       startTimesResponse: [],
       languagesResponse: [],
       ageRestrictionsResponse: [],
       genresResponse:[],
-      moviesByDay:{}
+      moviesByDay: reactive({})
     };
   },
   mounted() {
+    this.getAllMovieWeekDays();
     this.getAllMovieStartTimes()
     this.getAllMovieLanguages()
     this.getAllMovieAgeRestrictions()
     this.getAllMovieGenres()
   },
   methods: {
+    selectDay(day){
+      this.activeDay = day;
+      this.getAllMovieWeekDays();
+    },
+    isActiveDay(day){
+      return this.activeDay === day;
+    },
+    getDayName(day){
+      const dayNames = {
+        MONDAY: 'Esmaspaev',
+        TUESDAY: 'Teisipaev',
+        WEDNESDAY: 'Kolmapaev',
+        THURSDAY: 'Neljapaev',
+        FRIDAY: 'Reede',
+        SATURDAY: 'Laupaev',
+        SUNDAY: 'Puhapaev',
+      }
+      return dayNames[day];
+    },
+    getAllMovieWeekDays() {
+      this.$http.get("/filter/all/week-days")
+          .then(response => {
+            this.weekDaysResponse = response.data;
+            this.weekDaysResponse.forEach(day => {
+              this.$http.get(`/movie/by-weekday?weekDay=${day}`)
+                  .then(movieResponse => {
+                    // Use reactive approach to update moviesByDay
+                    this.moviesByDay[day] = movieResponse.data;
+                    console.log('MOVIE RESPONSE: ' + movieResponse.data);
+                    console.log('MOVIeS: ' + this.moviesByDay);
+                  })
+                  .catch(error => {
+                    console.log(error);
+                  });
+            });
+          })
+          .catch(error => {
+            console.log(error);
+          });
+    },
     getAllMovieStartTimes() {
       this.$http.get("/filter/all/start-times")
           .then(response => {
