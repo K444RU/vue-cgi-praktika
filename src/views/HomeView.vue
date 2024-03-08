@@ -85,17 +85,16 @@
             </div>
 
             <div class="filter-picker-choice">
-              <div class=" dropdown">
+              <div class="dropdown">
                 <button class="dropdown-button dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <font-awesome-icon :icon="['fas', 'film']"/>  Zanr
                 </button>
                 <ul class="dropdown-menu">
-                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
-                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
-                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
-                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
-                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
-                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
+                  <li v-for="genre in genresResponse" :key="genre">
+                    <label class="checkbox">
+                      <input type="checkbox">{{ genre }}
+                    </label>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -108,8 +107,10 @@
                   Vanus
                 </button>
                 <ul class="dropdown-menu">
-                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
-                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
+                  <li v-for="age in ageRestrictionsResponse" :key="age">
+                    <label class="checkbox"><input type="checkbox">{{ age }}
+                    </label>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -122,8 +123,10 @@
                   Algus
                 </button>
                 <ul class="dropdown-menu">
-                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
-                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
+                  <li v-for="start in startTimesResponse" :key="start">
+                    <label class="checkbox"><input type="checkbox">{{ start }}:00
+                    </label>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -136,8 +139,11 @@
                   Keel
                 </button>
                 <ul class="dropdown-menu">
-                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
-                  <li><label class="checkbox"><input type="checkbox">Two</label></li>
+                  <li v-for="language in languagesResponse" :key="language">
+                    <label class="checkbox">
+                      <input type="checkbox">{{ language }}
+                    </label>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -549,17 +555,66 @@ import HomeHeader from "@/components/HomeHeader";
 
 export default {
   name: 'HomeView',
-  components: {HomeHeader, InfoFooter},
+  components: { HomeHeader, InfoFooter },
   data() {
     return {
-      isScrolling: false
-    }
+      isScrolling: false,
+      weekDaysResponse: [],
+      startTimesResponse: [],
+      languagesResponse: [],
+      ageRestrictionsResponse: [],
+      genresResponse:[],
+      moviesByDay:{}
+    };
+  },
+  mounted() {
+    this.getAllMovieStartTimes()
+    this.getAllMovieLanguages()
+    this.getAllMovieAgeRestrictions()
+    this.getAllMovieGenres()
   },
   methods: {
-
+    getAllMovieStartTimes() {
+      this.$http.get("/filter/all/start-times")
+          .then(response => {
+            this.startTimesResponse = response.data;
+            console.log(response.data);
+          })
+          .catch(error => {
+            console.error("Error fetching movie start times:", error);
+          });
+    },
+    getAllMovieLanguages() {
+      this.$http.get("/filter/all/languages")
+          .then(response => {
+            this.languagesResponse = response.data;
+            console.log(response.data)
+          })
+          .catch(error => {
+            console.log(error)
+          })
+    },
+    getAllMovieAgeRestrictions() {
+      this.$http.get("/filter/all/age-restrictions")
+          .then(response => {
+            this.ageRestrictionsResponse = response.data;
+            console.log(response.data)
+          })
+          .catch(error => {
+            console.log(error)
+          })
+    },
+    getAllMovieGenres() {
+      this.$http.get("/filter/all/genres")
+          .then(response => {
+            this.genresResponse = response.data;
+            console.log(response.data)
+          })
+          .catch(error => {
+            console.log(error)
+          })
+    },
   },
-
-
 }
 </script>
 
@@ -664,7 +719,7 @@ export default {
   border: none;
 }
 .filter-picker-choice .dropdown-menu {
-  width: 200px;
+  width: 250px;
   height: auto;
   background-color: #3c78b4;
   border: #3c78a0 2px solid;
