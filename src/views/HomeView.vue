@@ -18,8 +18,7 @@
                         :id="'pills-' + day.toLowerCase() + '-tab'"
                         @click="selectDay(day)"
                         type="button" role="tab" :aria-controls="'pills-' + day.toLowerCase()"
-                        :aria-selected="isActiveDay(day)"
-                >
+                        :aria-selected="isActiveDay(day)">
                   <span>{{ getDayName(day) }}</span>
                 </button>
               </li>
@@ -34,7 +33,8 @@
                 <ul class="dropdown-menu">
                   <li v-for="genre in genresResponse" :key="genre">
                     <label class="checkbox">
-                      <input type="checkbox">{{ genre }}
+                      <input v-model="selectedGenres[genre]"
+                             @change="filterMoviesByGenre" type="checkbox">{{ genre }}
                     </label>
                   </li>
                 </ul>
@@ -50,7 +50,9 @@
                 </button>
                 <ul class="dropdown-menu">
                   <li v-for="age in ageRestrictionsResponse" :key="age">
-                    <label class="checkbox"><input type="checkbox">{{ age }}
+                    <label class="checkbox">
+                      <input v-model="selectedAgeRestrictions[age]"
+                             @change="filterMoviesByAgeRestrictions" type="checkbox">{{ age }}
                     </label>
                   </li>
                 </ul>
@@ -66,7 +68,9 @@
                 </button>
                 <ul class="dropdown-menu">
                   <li v-for="start in startTimesResponse" :key="start">
-                    <label class="checkbox"><input type="checkbox">{{ start }}:00
+                    <label class="checkbox">
+                      <input v-model="selectedStartTimes[start]"
+                             @change="filterMoviesByStartTimes" type="checkbox">{{ start }}:00
                     </label>
                   </li>
                 </ul>
@@ -83,7 +87,8 @@
                 <ul class="dropdown-menu">
                   <li v-for="language in languagesResponse" :key="language">
                     <label class="checkbox">
-                      <input type="checkbox">{{ language }}
+                      <input v-model="selectedLanguages[language]"
+                             @change="filterMoviesByLanguages" type="checkbox">{{ language }}
                     </label>
                   </li>
                 </ul>
@@ -166,6 +171,10 @@ export default {
   components: { HomeHeader, InfoFooter },
   data() {
     return {
+      selectedGenres: [],
+      selectedAgeRestrictions: [],
+      selectedStartTimes: [],
+      selectedLanguages: [],
       activeDay: 'MONDAY',
       isScrolling: false,
       weekDaysResponse: [],
@@ -184,6 +193,89 @@ export default {
     this.getAllMovieGenres()
   },
   methods: {
+    filterMoviesByGenre() {
+      const selectedGenres = Object.keys(this.selectedGenres)
+          .filter(genre => this.selectedGenres[genre]);
+
+      if (selectedGenres.length === 0) {
+        this.getAllMovieWeekDays();
+        return;
+      }
+      const genreQueryParam = `genre=${selectedGenres.join(',')}`;
+      this.$http.get(`/filter/by-genre?${genreQueryParam}&weekDay=${this.activeDay}`)
+          .then(response => {
+            this.moviesByDay[this.activeDay] = response.data;
+            console.log("Response:", response.data);
+          })
+          .catch(error => {
+            console.error("Error:", error);
+          });
+    },
+
+    filterMoviesByAgeRestrictions() {
+      const selectedAgeRestrictions = Object.keys(this.selectedAgeRestrictions)
+          .filter(ageRestriction => this.selectedAgeRestrictions[ageRestriction]);
+
+      if (selectedAgeRestrictions.length === 0) {
+        this.getAllMovieWeekDays();
+        return;
+      }
+
+      const ageRestrictionsParam = `ageRestriction=${selectedAgeRestrictions.join(',')}`;
+      this.$http.get(`/filter/by-age-restriction?${ageRestrictionsParam}&weekDay=${this.activeDay}`)
+          .then(response => {
+            this.moviesByDay[this.activeDay] = response.data;
+            console.log(response.data);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+    },
+
+    filterMoviesByStartTimes() {
+      const selectedStartTimes = Object.keys(this.selectedStartTimes)
+          .filter(startTime => this.selectedStartTimes[startTime]);
+
+      if (selectedStartTimes.length === 0) {
+        this.getAllMovieWeekDays();
+        return;
+      }
+
+      // Convert selectedStartTimes to numbers
+      const startTimesArray = selectedStartTimes.map(time => parseInt(time));
+
+      const startTimesParam = `startTimes=${startTimesArray.join(',')}`;
+      this.$http.get(`/filter/by-start-time?${startTimesParam}&weekDay=${this.activeDay}`)
+          .then(response => {
+            this.moviesByDay[this.activeDay] = response.data;
+            console.log(response.data);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+    },
+
+
+    filterMoviesByLanguages() {
+      const selectedLanguages = Object.keys(this.selectedLanguages)
+          .filter(languages => this.selectedLanguages[languages]);
+      if (selectedLanguages.length === 0){
+        this.getAllMovieWeekDays();
+        return;
+      }
+      const languagesParam = `language=${selectedLanguages.join(',')}`;
+      this.$http.get(`/filter/by-language?${languagesParam}&weekDay=${this.activeDay}`)
+          .then(response => {
+            this.moviesByDay[this.activeDay] = response.data;
+            console.log(response.data)
+          })
+          .catch(error => {
+            console.log(error)
+          })
+    },
+
+
+
     selectDay(day){
       this.activeDay = day;
       this.getAllMovieWeekDays();
