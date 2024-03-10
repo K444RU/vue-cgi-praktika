@@ -3,37 +3,74 @@
     <img @click="goToHomePage" src="@/assets/cgi-stream-high-resolution-logo-transparent.png" alt="Logo" class="logo">
     <div class="header-left-side-row">
       <div class="header-left-side-cols">
-        <p @click="goToHomePage" class="active" type="button" >Nadala kinokava</p>
+        <p @click="goToHomePage" class="active" type="button">Nadala kinokava</p>
       </div>
-
+      <div class="header-left-side-cols">
+        <p type="button" v-if="isUserLoggedIn">Minu Soovitused</p>
+      </div>
     </div>
     <div class="header-right-side-row">
-      <div class="header-right-side-cols">
-      </div>
-      <div class="header-right-side-cols" @click="goToLogin">
-        <font-awesome-icon class="icons" :icon="['fas', 'circle-user']"/>
+      <div class="header-right-side-cols" @click="isUserLoggedIn ? toggleDropdown() : goToLogin()">
+      <font-awesome-icon class="icons" :icon="['fas', 'circle-user']"/>
+        <div v-if="isDropdownOpen" class="dropdown">
+          <button class="logout-button" @click="logout">Log Out</button>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
+
 <script>
 export default {
   name: 'HomeHeader',
+  data() {
+    return {
+      isUserLoggedIn: false,
+      isDropdownOpen: false,
+    };
+  },
   methods: {
     goToLogin() {
       this.$router.push({ name: 'login' });
     },
-    goToHomePage(){
-      this.$router.push({name: 'home'})
-    }
+    goToHomePage() {
+      this.$router.push({ name: 'home' });
+    },
+    toggleDropdown() {
+      this.isDropdownOpen = !this.isDropdownOpen;
+    },
+    logout() {
+      if (confirm('Sure you want to log out?')) {
+        localStorage.removeItem('userId');
+        this.isUserLoggedIn = false;
+        this.isDropdownOpen = false;
+        this.$router.push('/').catch(() => {});
+      }
+    },
   },
-}
+  mounted() {
+    const userId = localStorage.getItem('userId');
+    this.isUserLoggedIn = !!userId;
+  },
+};
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300&family=Permanent+Marker&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Smooch&display=swap');
 
 /*HEADER CSS*/
+.logout-button {
+  margin-left: 15px;
+  background-color: #3c78b4;
+  color: #000014;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
 
 .home-page-header {
   position: fixed;

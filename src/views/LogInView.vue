@@ -11,14 +11,14 @@
             <form class="form">
               <div class="input-group">
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username" placeholder="">
+                <input v-model="email" type="text" name="username" id="username" placeholder="">
               </div>
               <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="">
+                <input v-model="password" type="password" name="password" id="password" placeholder="">
 
               </div>
-              <button class="sign">Sign in</button>
+              <button @click="login" class="sign">Sign in</button>
             </form>
           </div>
         </div>
@@ -37,13 +37,36 @@ import InfoFooter from "@/components/InfoFooter";
 
 export default {
   name: 'LogInView',
-  components:{InfoFooter, HomeHeader}
+  components: {InfoFooter, HomeHeader},
+  data() {
+    return {
+      email: '',
+      password: '',
+    }
+  },
+  methods: {
+    login() {
+      this.$http
+          .post("/user/login", {
+            email: this.email,
+            password: this.password,
+          })
+          .then((response) => {
+            const {id: userId} = response.data;
+            localStorage.setItem("userId", userId);
+            this.$router.push({name: 'home'});
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+    }
+  }
 }
 </script>
 
 <style>
 /*BACKGROUND*/
-.login-background{
+.login-background {
   width: 100%;
   height: 100vh;
   position: relative;
@@ -51,6 +74,7 @@ export default {
   background-color: #000014;
   background-position: center;
 }
+
 .login-page-body {
   display: flex;
   overflow: hidden;
@@ -85,7 +109,7 @@ export default {
 
 }
 
-.login-box{
+.login-box {
   display: flex;
   width: 400px; /* Adjust the width as per your design */
   padding: 50px; /* Add padding as needed */
@@ -145,7 +169,7 @@ export default {
   border-color: #3c78b4;
 }
 
-.forgot a,.signup a {
+.forgot a, .signup a {
   color: rgba(243, 244, 246, 1);
   text-decoration: none;
   font-size: 14px;
