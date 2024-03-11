@@ -54,7 +54,6 @@
                 </ul>
               </div>
             </div>
-
             <div class="filter-picker-choice">
               <div class="dropdown">
                 <button class="dropdown-button dropdown-toggle" type="button" data-bs-toggle="dropdown"
@@ -72,7 +71,6 @@
                 </ul>
               </div>
             </div>
-
             <div class="filter-picker-choice">
               <div class="dropdown">
                 <button class="dropdown-button dropdown-toggle" type="button" data-bs-toggle="dropdown"
@@ -92,7 +90,6 @@
             </div>
           </ul>
         </div>
-
         <!--MOVIE INFO BOX-->
         <div class="home-page-centre-lower-tabs">
           <div class="tab-content" id="pills-tabContent">
@@ -126,16 +123,16 @@
                         </div>
                       </div>
                     </div>
-
-                    <div class="info-column">
+                    <div  class="info-column">
                       <div class="info-grid-wrapper">
                         <div class="row"></div>
                         <div class="row"></div>
                         <div class="row">
-                          <button class="ticket-button" >
+                          <button class="ticket-button" @click="redirectToBuyTicket(movie.id)">
                             <font-awesome-icon :icon="['fas', 'ticket']"/>
                             OSTA PILET
                           </button>
+
                         </div>
                       </div>
                     </div>
@@ -188,6 +185,16 @@ export default {
     this.getAllMovieGenres()
   },
   methods: {
+    redirectToBuyTicket(movieId) {
+      console.log("Navigating to buy ticket page with movieId:", movieId);
+
+      this.$router.push({
+        name: 'ticket',
+        query: {
+          movieId: movieId,
+        },
+      });
+    },
     recommendMoviesBasedOnHistory() {
       const userId = localStorage.getItem('userId');
       const weekDay = this.activeDay;
@@ -249,7 +256,6 @@ export default {
         return;
       }
 
-      // Convert selectedStartTimes to numbers
       const startTimesArray = selectedStartTimes.map(time => parseInt(time));
 
       const startTimesParam = `startTimes=${startTimesArray.join(',')}`;
@@ -526,7 +532,7 @@ export default {
 }
 
 .day-choice-button:active,
-.day-choice-button.active { /* For Bootstrap's 'active' class */
+.day-choice-button.active {
   background: #000014;
   color: white;
   box-shadow: 0px 6px 24px 0px #183153;
@@ -702,6 +708,4 @@ export default {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
 }
-
-
 </style>
