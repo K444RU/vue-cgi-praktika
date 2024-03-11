@@ -6,7 +6,9 @@
         <p @click="goToHomePage" class="active" type="button">Nadala kinokava</p>
       </div>
       <div class="header-left-side-cols">
-        <p type="button" v-if="isUserLoggedIn">Minu Soovitused</p>
+        <p @click="recommendMoviesBasedOnHistory" type="button" v-if="isUserLoggedIn">
+          Soovita filme vaatamisajaloo põhjal
+        </p>
       </div>
     </div>
     <div class="header-right-side-row">
@@ -31,6 +33,11 @@ export default {
     };
   },
   methods: {
+    recommendMoviesBasedOnHistory() {
+      console.log('recommendMoviesBasedOnHistory called');
+      this.$emit('recommendMovies');
+    },
+
     goToLogin() {
       this.$router.push({ name: 'login' });
     },
@@ -70,6 +77,8 @@ export default {
   border-radius: 5px;
   cursor: pointer;
   font-size: 15px;
+  box-shadow: 0px 6px 24px 0px #183153;
+
 }
 
 .home-page-header {
@@ -112,13 +121,13 @@ export default {
   flex: 8;
   height: 100%;
   display: flex;
+  align-items: center;
   /*border: 1px solid white;*/
 }
 
 .header-left-side-cols {
-  width: 20%;
-  padding: 5px;
-  height: 100%;
+  width: 25%;
+  height: 40%;
   display: flex;
   text-align: center;
   align-items: center;
@@ -127,6 +136,9 @@ export default {
   font-size: 20px;
   color: #3c78b4;
   /*border: 1px solid white;*/
+}
+.header-left-side-cols:hover{
+  color: white;
 }
 
 .header-right-side-row {
