@@ -1,13 +1,10 @@
 <template>
   <div class="home-page-background">
     <!--HEADER-->
-    <HomeHeader/>
-
+    <HomeHeader @recommendMovies="recommendMoviesBasedOnHistory" :isUserLoggedIn="isUserLoggedIn" />
     <!--BODY-->
     <div class="home-page-body">
-      <div class="home-page-left-nav">
-      </div>
-
+      <div class="home-page-left-nav"></div>
       <!--NEW UPPER BUTTONS DAY PICKERS-->
       <div class="home-page-centre-nav">
         <div class="home-page-centre-upper-tabs2">
@@ -23,7 +20,7 @@
                 </button>
               </li>
             </div>
-
+            <!--NEW UPPER BUTTONS FILTER PICKERS-->
             <div class="filter-picker-choice">
               <div class="dropdown">
                 <button class="dropdown-button dropdown-toggle" type="button" id="dropdownMenuButton"
@@ -40,7 +37,6 @@
                 </ul>
               </div>
             </div>
-
             <div class="filter-picker-choice">
               <div class="dropdown">
                 <button class="dropdown-button dropdown-toggle" type="button" data-bs-toggle="dropdown"
@@ -97,7 +93,7 @@
           </ul>
         </div>
 
-
+        <!--MOVIE INFO BOX-->
         <div class="home-page-centre-lower-tabs">
           <div class="tab-content" id="pills-tabContent">
             <div v-for="day in weekDaysResponse" :key="day" class="tab-pane fade show"
@@ -146,14 +142,12 @@
                   </div>
                 </div>
               </div>
-              <!--MOVIE INFO BOX-->
             </div>
           </div>
         </div>
-
+        <!--MOVIE INFO BOX-->
       </div>
-      <div class="home-page-right-nav">
-      </div>
+      <div class="home-page-right-nav"></div>
     </div>
     <!--FOOTER-->
     <InfoFooter/>
@@ -182,7 +176,8 @@ export default {
       languagesResponse: [],
       ageRestrictionsResponse: [],
       genresResponse:[],
-      moviesByDay: reactive({})
+      moviesByDay: reactive({}),
+      isUserLoggedIn: false,
     };
   },
   mounted() {
@@ -193,6 +188,19 @@ export default {
     this.getAllMovieGenres()
   },
   methods: {
+    recommendMoviesBasedOnHistory() {
+      const userId = localStorage.getItem('userId');
+      const weekDay = this.activeDay;
+
+      this.$http.get(`/filter/by-recommended-genres?userId=${userId}&weekDay=${weekDay}`)
+          .then(response => {
+            this.moviesByDay[this.activeDay] = response.data;
+            console.log('Recommended Movies:', response.data);
+          })
+          .catch(error => {
+            console.error('Error fetching recommended movies:', error);
+          });
+    },
     filterMoviesByGenre() {
       const selectedGenres = Object.keys(this.selectedGenres)
           .filter(genre => this.selectedGenres[genre]);
@@ -254,8 +262,6 @@ export default {
             console.log(error);
           });
     },
-
-
     filterMoviesByLanguages() {
       const selectedLanguages = Object.keys(this.selectedLanguages)
           .filter(languages => this.selectedLanguages[languages]);
@@ -273,9 +279,6 @@ export default {
             console.log(error)
           })
     },
-
-
-
     selectDay(day){
       this.activeDay = day;
       this.getAllMovieWeekDays();
