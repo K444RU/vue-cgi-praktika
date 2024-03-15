@@ -106,12 +106,14 @@ export default {
   height: 100vh;
 
 }
+
 .login-box {
   display: flex;
   width: 400px;
   padding: 50px;
   margin-bottom: 150px;
 }
+
 .form-container {
   width: 320px;
   border-radius: 0.75rem;
@@ -120,6 +122,7 @@ export default {
   color: rgba(243, 244, 246, 1);
   box-shadow: 0px 6px 24px 0px #183153;
 }
+
 .title {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
@@ -127,9 +130,11 @@ export default {
   font-size: 1.5rem;
   line-height: 2rem;
 }
+
 .form {
   margin-top: 1.5rem;
 }
+
 .input-group {
   margin-top: 0.25rem;
   font-size: 0.875rem;
@@ -139,11 +144,13 @@ export default {
   font-weight: 400;
 
 }
+
 .input-group label {
   display: block;
   color: white;
   margin-bottom: 4px;
 }
+
 .input-group input {
   width: 100%;
   border: 1px solid #3c78b4;
@@ -153,17 +160,21 @@ export default {
   color: rgba(243, 244, 246, 1);
   border-radius: 5px;
 }
+
 .input-group input:focus {
   border-color: #3c78b4;
 }
+
 .forgot a, .signup a {
   color: rgba(243, 244, 246, 1);
   text-decoration: none;
   font-size: 14px;
 }
+
 .forgot a:hover, .signup a:hover {
   text-decoration: underline #3c78b4;
 }
+
 .sign {
   display: block;
   width: 100%;

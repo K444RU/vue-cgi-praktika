@@ -1,19 +1,15 @@
 <template>
   <div class="home-page-header">
-    <img @click="goToHomePage" src="@/assets/cgi-stream-high-resolution-logo-transparent.png" alt="Logo" class="logo">
+    <img @click="navigateToHomePage" src="@/assets/cgi-stream-high-resolution-logo-transparent.png" alt="Logo"
+         class="logo">
     <div class="header-left-side-row">
       <div class="header-left-side-cols">
-        <p @click="goToHomePage" class="active" type="button">Nadala kinokava</p>
-      </div>
-      <div class="header-left-side-cols">
-        <p @click="recommendMoviesBasedOnHistory" type="button" v-if="isUserLoggedIn">
-          Soovita filme vaatamisajaloo põhjal
-        </p>
+        <h3 @click="navigateToHomePage" class="active" type="button">Nadala kinokava</h3>
       </div>
     </div>
     <div class="header-right-side-row">
-      <div class="header-right-side-cols" @click="isUserLoggedIn ? toggleDropdown() : goToLogin()">
-      <font-awesome-icon class="icons" :icon="['fas', 'circle-user']"/>
+      <div class="header-right-side-cols" @click="isUserLoggedIn ? toggleDropdown() : navigateToLogin()">
+        <font-awesome-icon class="icons" :icon="['fas', 'circle-user']"/>
         <div v-if="isDropdownOpen" class="dropdown">
           <button class="logout-button" @click="logout">Log Out</button>
         </div>
@@ -21,7 +17,6 @@
     </div>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -33,16 +28,11 @@ export default {
     };
   },
   methods: {
-    recommendMoviesBasedOnHistory() {
-      console.log('recommendMoviesBasedOnHistory called');
-      this.$emit('recommendMovies');
+    navigateToLogin() {
+      this.$router.push({name: 'login'});
     },
-
-    goToLogin() {
-      this.$router.push({ name: 'login' });
-    },
-    goToHomePage() {
-      this.$router.push({ name: 'home' });
+    navigateToHomePage() {
+      this.$router.push({name: 'home'});
     },
     toggleDropdown() {
       this.isDropdownOpen = !this.isDropdownOpen;
@@ -52,15 +42,16 @@ export default {
         localStorage.removeItem('userId');
         this.isUserLoggedIn = false;
         this.isDropdownOpen = false;
-        this.$router.push('/').catch(() => {});
+        this.$router.push('/').catch(() => {
+        });
       }
     },
   },
   mounted() {
     const userId = localStorage.getItem('userId');
     this.isUserLoggedIn = !!userId;
-  },
-};
+  }
+}
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300&family=Permanent+Marker&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Smooch&display=swap');
@@ -78,7 +69,6 @@ export default {
   cursor: pointer;
   font-size: 15px;
   box-shadow: 0px 6px 24px 0px #183153;
-
 }
 
 .home-page-header {
@@ -95,13 +85,6 @@ export default {
   justify-content: space-between;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 500;
-  /*background-image: linear-gradient(*/
-  /*    to bottom,*/
-  /*    rgba(0, 0, 0, 0) 80%,*/
-  /*    rgba(0, 0, 0, 0) 90%,*/
-  /*    rgba(0, 0, 0, 0.6) 95%,*/
-  /*    rgba(0, 0, 0, 0.8) 100%*/
-  /*);*/
 }
 
 .logo {
@@ -135,9 +118,12 @@ export default {
   justify-content: center;
   font-size: 20px;
   color: #3c78b4;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
   /*border: 1px solid white;*/
 }
-.header-left-side-cols:hover{
+
+.header-left-side-cols:hover {
   color: white;
 }
 
@@ -160,7 +146,4 @@ export default {
   justify-content: center;
   /*border: 1px solid white;*/
 }
-
-/*BODY CSS*/
-
 </style>
