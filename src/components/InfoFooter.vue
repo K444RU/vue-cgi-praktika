@@ -7,7 +7,7 @@
             <div class="single-cta">
               <i class="fas fa-map-marker-alt"></i>
               <div class="cta-text">
-                <h4>Find us</h4>
+                <h4>Leia meid</h4>
                 <span>50106, Sõbra 54, 51013 Tartu</span>
               </div>
             </div>
@@ -16,7 +16,7 @@
             <div class="single-cta">
               <i class="fas fa-phone"></i>
               <div class="cta-text">
-                <h4>Call us</h4>
+                <h4>Kontakt</h4>
                 <span>737 0700</span>
               </div>
             </div>
@@ -25,7 +25,7 @@
             <div class="single-cta">
               <i class="far fa-envelope-open"></i>
               <div class="cta-text">
-                <h4>Mail us</h4>
+                <h4>E-post</h4>
                 <span>mail@cgi.com</span>
               </div>
             </div>
@@ -70,10 +70,10 @@
           <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
             <div class="footer-widget">
               <div class="footer-widget-heading">
-                <h3>Subscribe</h3>
+                <h3>Jälgi</h3>
               </div>
               <div class="footer-text mb-25">
-                <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                <p>Hoiame sind kursis</p>
               </div>
               <div class="subscribe-form">
                 <form action="#">
@@ -94,6 +94,7 @@ export default {
 }
 </script>
 <style>
+
 ul {
   margin: 0px;
   padding: 0px;
@@ -124,7 +125,7 @@ ul {
 }
 
 .cta-text h4 {
-  color: #3c78b4;
+  color: #3498DB;
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 2px;
@@ -165,7 +166,7 @@ ul {
 }
 
 .footer-widget-heading h3 {
-  color: #3c78b4;
+  color: #3498DB;
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 40px;
@@ -179,7 +180,7 @@ ul {
   bottom: -15px;
   height: 2px;
   width: 50px;
-  background: #3c78a0;
+  background: #3498DB;
 }
 
 .footer-widget ul li {
